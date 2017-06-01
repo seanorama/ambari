@@ -132,10 +132,10 @@ entity_groupfs_store_dir_mode = 0700
 hadoop_conf_secure_dir = os.path.join(hadoop_conf_dir, "secure")
 
 limits_conf_dir = "/etc/security/limits.d"
-yarn_user_nofile_limit = default("/configurations/yarn-env/yarn_user_nofile_limit", "32768")
+yarn_user_nofile_limit = default("/configurations/yarn-env/yarn_user_nofile_limit", "64000")
 yarn_user_nproc_limit = default("/configurations/yarn-env/yarn_user_nproc_limit", "65536")
 
-mapred_user_nofile_limit = default("/configurations/mapred-env/mapred_user_nofile_limit", "32768")
+mapred_user_nofile_limit = default("/configurations/mapred-env/mapred_user_nofile_limit", "64000")
 mapred_user_nproc_limit = default("/configurations/mapred-env/mapred_user_nproc_limit", "65536")
 
 execute_path = os.environ['PATH'] + os.pathsep + hadoop_bin_dir + os.pathsep + yarn_container_bin
