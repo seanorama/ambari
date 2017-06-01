@@ -107,7 +107,7 @@
   </property>
   <property>
     <name>yarn_user_nofile_limit</name>
-    <value>32768</value>
+    <value>64000</value>
     <description>Max open files limit setting for YARN user.</description>
     <on-ambari-upgrade add="true"/>
   </property>
