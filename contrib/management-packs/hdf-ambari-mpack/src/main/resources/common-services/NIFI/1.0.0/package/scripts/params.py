@@ -211,6 +211,10 @@ jdk64_home=config['hostLevelParams']['java_home']
 
 #autodetect ambari server for metrics
 if 'metrics_collector_hosts' in config['clusterHostInfo']:
+  if default("/configurations/ams-site/timeline.metrics.service.http.policy", "HTTP_ONLY") == "HTTPS_ONLY":
+    metric_collector_protocol = 'https'
+  else:
+    metric_collector_protocol = 'http'
   metrics_collector_host = str(config['clusterHostInfo']['metrics_collector_hosts'][0])
   metrics_collector_port = str(get_port_from_url(config['configurations']['ams-site']['timeline.metrics.service.webapp.address']))
 else:
